@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <style>
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library</h1>
+
+    
+    <div class="pagination">
+        {% if page != 1 %}
+            <a href="?page=1">First</a>
+            <a href="?page={{ page - 1 }}">Previous</a>
+        {% endif %}
+
+        {% for p in range(1, total_pages + 2) %}
+            {% if p == page %}
+                <a href="?page={{ p }}" class="active">{{ p }}</a>
+            {% else %}
+                <a href="https://kitabevim.az/m%C9%99hsul/s%c9%99fill%c9%99r-viktor-huqo-2/">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+        {% for p in range(2, total_pages + 3) %}
+            {% if p == page %}
+                <a href="?page={{ p }}" class="active">{{ p }}</a>
+            {% else %}
+                <a href="https://kitabevim.az/m%C9%99hsul/cinay%c9%99t-v%c9%99-c%c9%99za-fyodor-dostoyevski/">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+        {% for p in range(3, total_pages + 4) %}
+            {% if p == page %}
+                <a href="?page={{ p }}" class="active">{{ p }}</a>
+            {% else %}
+                <a href="https://kitabevim.az/m%C9%99hsul/hokmdar-nikolo-makiavelli-2/">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+        {% for p in range(4, total_pages + 5) %}
+        {% if p == page %}
+            <a href="?page={{ p }}" class="active">{{ p }}</a>
+        {% else %}
+            <a href="https://kitabevim.az/m%C9%99hsul/gorunm%c9%99z-adam-herbert-uells/">{{ p }}</a>
+        {% endif %}
+        {% endfor %}
+        {% for p in range(5, total_pages + 6) %}
+        {% if p == page %}
+            <a href="?page={{ p }}" class="active">{{ p }}</a>
+        {% else %}
+            <a href="https://kitabevim.az/m%C9%99hsul/d%c9%99fin%c9%99l%c9%99r-adasi-robert-stevenson/">{{ p }}</a>
+        {% endif %}
+        {% endfor %}
+
+
+        {% if page != total_pages %}
+            <a href="?page={{ page+1 }}">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>
